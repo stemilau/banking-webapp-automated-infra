@@ -1,6 +1,6 @@
 Project Structure
 infrastructure
-	startup
+	startup-procedures
 		provision AWX node
 		provision GitLab node
 		install + config GitLab server self-hosted
