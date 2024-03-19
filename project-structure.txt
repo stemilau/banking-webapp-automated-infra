@@ -1,0 +1,20 @@
+Project Structure
+infrastructure
+	startup
+		provision AWX node
+		provision GitLab node
+		install + config GitLab server self-hosted
+		install + config Ansible + AWX server sel-hosted
+		ensure that Ansible/AWX can read from GitLab
+	playbooks
+		provisioning
+			provision Redis Cluster
+			provsion MySQL/MariaDB Cluster
+		install + config
+banking-webapp
+	backend -> ASP.NET
+		Token Store -> Session Auth > JWT?
+			    -> MultiFactorAuth/OTP
+		Caching 
+	frontend -> React JS
+
