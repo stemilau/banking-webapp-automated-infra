@@ -1,20 +1,32 @@
 Project Structure
 infrastructure
 	startup-procedures
-		provision AWX node
-		provision GitLab node
-		install + config GitLab server self-hosted
-		install + config Ansible + AWX server sel-hosted
-		ensure that Ansible/AWX can read from GitLab
+		provision Ansible node
+		install + config Ansible
+		ensure that Ansible can reach other nodes
+		provision Kubernetes Cluster nodes
+		install + config Kubernetes Cluster Nodes
+		install AWX operator
 	playbooks
 		provisioning
-			provision Redis Cluster
-			provsion MySQL/MariaDB Cluster
-		install + config
+			provision Redis Cache Cluster nodes (containers)
+			provision Redis Token Store Cluster nodes (containers)
+			provsion MariaDB Cluster nodes (virtual machine)
+			provision NGINX webserver node (virtual machine)
+			provision Prometheus (containers)
+			provision Grafana (containers)
+		install & config
+			install & config Redis Cache Cluster
+			install & config Redis Token Store Cluster
+			install & config MariaDB Cluster
+			install & config NGINX webserver
+			install & config Prometheus
+			install & config Grafana
+			
 banking-webapp
-	backend -> ASP.NET
-		Token Store -> Session Auth > JWT?
-			    -> MultiFactorAuth/OTP
-		Caching 
-	frontend -> React JS
+	backend -> Django API
+		Token Store -> OAuth 2.0 -> JWT Bearer Token
+			    -> Microsoft Authenticator
+		Caching -> MariaDB <-> Redis Cache Cluster
+	frontend -> React JS + Bootstrap CSS
 
